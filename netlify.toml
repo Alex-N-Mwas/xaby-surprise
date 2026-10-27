@@ -1,0 +1,18 @@
+[build]
+  command = "node scripts/build.mjs"
+  publish = "public"
+
+[[redirects]]
+  from = "/api/music-list"
+  to = "/api/music-list.json"
+  status = 200
+
+[[redirects]]
+  from = "/api/photos"
+  to = "/api/photos.json"
+  status = 200
+
+[[redirects]]
+  from = "/api/cutouts"
+  to = "/api/cutouts.json"
+  status = 200

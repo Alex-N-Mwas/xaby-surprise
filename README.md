@@ -17,3 +17,7 @@ Open [http://localhost:3000](http://localhost:3000). Enter the passcode set in `
 - Put transparent PNG, WebP, or AVIF artwork in [cutouts](cutouts/). The images fade and pop in near the sides as the visitor scrolls. See [cutouts/README.md](cutouts/README.md).
 
 The page needs to be hosted online for Xaby to open it from another device. Use HTTPS and persistent storage for `opens.json` and the two media folders.
+
+## Deploy on Netlify
+
+Set an `ACCESS_CODE` environment variable in the Netlify project settings before deploying; without it nobody can get past the gate. The build copies the pages and media into `public/`, an edge function keeps everything except the gate page behind a signed cookie, and the open count is stored in Netlify Database.
