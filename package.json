@@ -5,5 +5,14 @@
   "description": "A shared space for couples to plan dates, save notes, and track dreams.",
   "scripts": {
     "start": "node server.js"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.1",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "@netlify/edge-functions": "^4.0.3",
+    "@netlify/functions": "^6.0.3",
+    "drizzle-kit": "^1.0.0-beta.22"
   }
 }

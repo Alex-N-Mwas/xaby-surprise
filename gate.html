@@ -19,7 +19,7 @@
     <form id="accessForm">
       <label class="consent"><input id="consent" type="checkbox" required><span>I understand that entering the correct code records that I opened this page and saves the time.</span></label>
       <label for="code" class="kicker">YOUR PASSCODE</label>
-      <input id="code" class="code" type="password" inputmode="numeric" autocomplete="one-time-code" required aria-label="Passcode">
+      <input id="code" class="code" type="password" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" required aria-label="Passcode">
       <button class="submit" id="submit" type="submit" disabled>Open the note <span aria-hidden="true">♡</span></button>
       <p class="message" id="message" role="status" aria-live="polite"></p>
     </form>
