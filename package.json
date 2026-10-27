@@ -1,0 +1,14 @@
+{
+  "name": "twofold-couples-space",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A shared space for couples to plan dates, save notes, and track dreams.",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node scripts/prepare-netlify.js"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13",
+    "@netlify/functions": "^6.0.3"
+  }
+}

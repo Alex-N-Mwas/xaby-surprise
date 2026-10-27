@@ -1,0 +1,62 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["index.html", "gate.html", "photos/**", "music/**", "cutouts/**"]
+
+[[redirects]]
+  from = "/"
+  to = "/.netlify/functions/page?page=gate"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/gate.html"
+  to = "/.netlify/functions/page?page=gate"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/surprise"
+  to = "/.netlify/functions/page?page=surprise"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/.netlify/functions/page?page=surprise"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/access"
+  to = "/.netlify/functions/auth"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/app?route=:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/photos/*"
+  to = "/.netlify/functions/media?folder=photos&name=:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/music/*"
+  to = "/.netlify/functions/media?folder=music&name=:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/cutouts/*"
+  to = "/.netlify/functions/media?folder=cutouts&name=:splat"
+  status = 200
+  force = true

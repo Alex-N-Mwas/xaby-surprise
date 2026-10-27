@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f2">
+  <title>A little note for Xaby</title>
+  <style>
+    :root{color-scheme:light;--ink:#57443d;--rose:#a95955;--soft:#9b8174;--line:#ead9ce;--cream:#fff9f2}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 45%,#fffefa 0,#fff8ef 66%,#f5e8df 100%);color:var(--ink);font-family:Arial,sans-serif}.card{width:min(430px,100%);background:#fffdfa;border:1px solid var(--line);padding:32px 28px;box-shadow:0 16px 50px #77554616;text-align:center;position:relative}.flower{font-size:27px;color:#c69565}.kicker{font-size:9px;letter-spacing:2px;color:#aa8974;font-weight:bold;margin:14px 0 8px}.title{font:42px/1.1 Georgia,serif;font-weight:normal;margin:0;color:#5d4940}.title em{color:var(--rose)}.intro{font:16px/1.4 Georgia,serif;color:#8c7568;margin:10px 0 22px}.notice{padding:15px;background:#f8eee7;border-left:2px solid #d39583;text-align:left;color:#755c50;font-size:11px;line-height:1.7}.notice strong{color:#694b44}.consent{display:flex;text-align:left;gap:9px;align-items:start;margin:17px 0;font-size:10px;line-height:1.5;color:#786a60}.consent input{accent-color:#a95955;margin-top:2px;flex:none}.code{width:100%;padding:12px;border:1px solid #e7d8ce;background:#fffdfa;text-align:center;letter-spacing:6px;font-size:20px;color:#57443d;outline:none}.code:focus{border-color:#bc7c70}.submit{width:100%;margin-top:12px;padding:13px;background:#a95955;border:0;color:white;font-weight:bold;font-size:11px;letter-spacing:.3px;cursor:pointer}.submit:disabled{opacity:.45;cursor:not-allowed}.message{min-height:20px;margin:12px 0 0;color:#95645d;font-size:10px;line-height:1.5}.signoff{font:17px 'Brush Script MT',cursive;color:#ac7368;margin:16px 0 0}.heart{position:absolute;right:17px;top:14px;color:#d99c8d}.privacy{font-size:8px;color:#a19388;line-height:1.5;margin:13px 0 0}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="heart" aria-hidden="true">♡</span><div class="flower" aria-hidden="true">✿</div>
+    <p class="kicker">A LITTLE NOTE FROM ERLEX</p>
+    <h1 class="title">For <em>Xaby.</em></h1>
+    <p class="intro">A private little page, made with care.</p>
+    <div class="notice" id="notice"><strong>Before you open it:</strong> WARNING: Successful entries are counted the time is saved and you can lose your heart by erlex. No email notifications are sent. The site does not save your location, IP address, or device details. Continue only if you’re comfortable with that.Becarefull with this guy.</div>
+    <form id="accessForm">
+      <label class="consent"><input id="consent" type="checkbox" required><span>I understand that entering the correct code records that I opened this page and saves the time.</span></label>
+      <label for="code" class="kicker">YOUR PASSCODE</label>
+      <input id="code" class="code" type="password" inputmode="numeric" autocomplete="one-time-code" required aria-label="Passcode">
+      <button class="submit" id="submit" type="submit" disabled>Open the note <span aria-hidden="true">♡</span></button>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+    </form>
+    <p class="privacy">Only successful, consented entries are counted.if wrong code is entered, u shall wait 10 mins,ha. No location or device tracking.</p>
+    <p class="signoff">with love, Erlex</p>
+  </main>
+  <script>
+    const consent = document.querySelector('#consent');
+    const code = document.querySelector('#code');
+    const submit = document.querySelector('#submit');
+    const message = document.querySelector('#message');
+    consent.addEventListener('change', () => { submit.disabled = !consent.checked; });
+    document.querySelector('#accessForm').addEventListener('submit', async event => {
+      event.preventDefault(); if (!consent.checked) return;
+      submit.disabled = true; message.textContent = 'Checking your code…';
+      try {
+        const response = await fetch('/api/access', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: code.value, consent: consent.checked }) });
+        const result = await response.json();
+        if (!response.ok) { message.textContent = result.error || 'That code did not work. Try again.'; submit.disabled = !consent.checked; code.select(); return; }
+        message.textContent = 'The note is ready. This opening was counted.';
+        setTimeout(() => { location.href = result.redirect || '/surprise'; }, 1000);
+      } catch { message.textContent = 'Could not connect. Please try again in a moment.'; submit.disabled = !consent.checked; }
+    });
+  </script>
+</body>
+</html>

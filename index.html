@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9f2">
+  <meta name="description" content="A little love story, made just for you.">
+  <title>For Xaby, with love — from Erlex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=photo-carousel-1">
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="intro" id="intro">
+    <div class="intro-flower flower-a" aria-hidden="true">✿</div><div class="intro-flower flower-b" aria-hidden="true">✽</div>
+    <div class="envelope" aria-hidden="true"><span>♥</span></div>
+    <p class="intro-kicker">A LITTLE NOTE FOR YOU</p>
+    <h1>Hey, <em id="herName">Xaby</em>…</h1>
+    <p class="intro-copy">I made you a little something <span>💌</span></p>
+    <button class="open-button" id="openSurprise">Open your surprise <span>↗</span></button>
+    <p class="intro-signoff">with love, <span id="introYourName">Erlex</span></p>
+    <div class="intro-sparkle sparkle-one">✦</div><div class="intro-sparkle sparkle-two">✧</div>
+  </div>
+
+  <div class="site hidden" id="site">
+    <header class="topbar"><a href="#top" class="wordmark">a little <span>♡</span> thing</a><nav aria-label="Page sections"><a href="#letter">the note</a><a href="#story">our story</a><a href="#reasons">reasons</a><a href="#surprise">surprises</a></nav><div class="topbar-actions"><span class="music-status" id="musicStatus" aria-live="polite">music from music/</span><button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Turn background music on">♫ <span>Sound off</span></button><a href="#ending" class="top-heart" aria-label="Jump to the ending">♡</a></div></header>
+    <main id="top">
+      <section class="hero section-wrap">
+        <div class="hero-copy"><p class="eyebrow"><span>✦</span> A LITTLE NOTE FROM ERLEX <span>✦</span></p><h2>My favorite<br>plot twist <em>was you.</em></h2><p class="hero-sub">A small scrapbook of the moments I keep and the things I loved about you.</p><div class="hero-byline"><span class="byline-line"></span> with love, <span id="heroYourName">Erlex</span></div></div>
+        <div class="hero-art" aria-label="Illustration of a heart and flowers"><div class="sun-disc"></div><div class="hero-heart">♥</div><span class="art-flower af-one">✿</span><span class="art-flower af-two">✿</span><span class="art-flower af-three">✽</span><span class="art-leaf leaf-one">❧</span><span class="art-leaf leaf-two">❧</span><span class="art-sparkle as-one">✦</span><span class="art-sparkle as-two">✧</span><span class="art-sparkle as-three">·</span><div class="art-caption">you make<br>life feel like <em>spring</em></div></div>
+        <a class="scroll-cue" href="#letter"><span></span> SCROLL A LITTLE</a>
+      </section>
+
+      <section class="section-wrap letter-section" id="letter"><div class="section-heading"><p class="eyebrow">01 · FROM MY HEART</p><h2>A note <em>for you.</em></h2><p>A few words I wanted you to have.</p></div><article class="letter-card"><div class="letter-flower">✿</div><div class="letter-topline">MY DEAREST <span id="letterName">XABY</span></div><div class="letter-text" id="letterText"></div><div class="letter-bottom"><span>With love,</span><span class="signature"><span id="letterYourName">Erlex</span> <b>♡</b></span></div></article></section>
+
+      <section class="story-section" id="story"><div class="section-wrap"><div class="section-heading centered"><p class="eyebrow">02 · THE GOOD PARTS</p><h2>Our little <em>story.</em></h2><p>Some favorite pages from a story still being written.</p></div><div class="timeline" id="timeline"></div><div class="timeline-add"><span>✧</span> The good memories are yours to keep.</div></div></section>
+
+      <section class="section-wrap reasons-section" id="reasons"><div class="section-heading"><p class="eyebrow">03 · A VERY SHORT LIST</p><h2>Reasons I <em>adored you.</em></h2><p>Tap a card. There are more than fit on this page.</p></div><div class="reason-grid" id="reasonGrid"></div><button class="outline-button" id="moreReason">Turn over another card <span>↻</span></button></section>
+
+      <section class="gallery-section" id="gallery"><div class="section-wrap"><div class="section-heading centered"><p class="eyebrow">04 · LITTLE TIME CAPSULES</p><h2>Us, in <em>little moments.</em></h2><p>The pictures say the parts words can't.</p></div><div class="photo-carousel" id="photoCarousel"><button class="carousel-arrow carousel-prev" id="photoPrev" type="button" aria-label="Previous photo">‹</button><div class="photo-viewport" id="photoViewport" tabindex="0" aria-label="Photo carousel"><div class="photo-track" id="photoGrid"></div></div><button class="carousel-arrow carousel-next" id="photoNext" type="button" aria-label="Next photo">›</button><div class="carousel-footer"><div class="photo-dots" id="photoDots" aria-label="Choose a photo"></div><span class="photo-counter" id="photoCounter" aria-live="polite"></span></div></div><p class="photo-note">Swipe or use the arrows to look through the photos.</p></div></section>
+
+      <section class="section-wrap surprise-section" id="surprise"><div class="section-heading centered"><p class="eyebrow">05 · A LITTLE SOMETHING FOR YOU</p><h2>A few little <em>joys.</em></h2><p>Three small wishes, with no strings attached.</p></div><button class="date-button" id="pickDate"><span>♡</span> Pick a little something</button><div class="date-options" id="dateOptions" hidden></div><button class="secret-heart" id="secretHeart" aria-label="Discover a secret message">♥<span>a little note…</span></button><div class="secret-note" id="secretNote" hidden></div></section>
+
+      <section class="quiz-section"><div class="section-wrap quiz-wrap"><div class="quiz-heading"><span class="quiz-icon">✿</span><p class="eyebrow">06 · A VERY IMPORTANT QUIZ</p><h2>One tiny <em>quiz.</em></h2><p>For a smile, not a score. Every answer is a good one.</p></div><div class="quiz-card"><div class="quiz-number" id="quizNumber">A LITTLE MEMORY QUIZ</div><h3 id="quizQuestion"></h3><div class="quiz-answers" id="quizAnswers"></div><div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div><button class="quiz-next" id="quizNext" hidden>One more? <span>→</span></button></div></div></section>
+
+      <section class="section-wrap coupons-section"><div class="section-heading centered"><p class="eyebrow">07 · LITTLE WISHES FOR YOU</p><h2>Good things <em>ahead.</em></h2><p>Just a few kind wishes for whatever comes next.</p></div><div class="coupon-grid" id="couponGrid"></div></section>
+
+      <section class="places-section"><div class="section-wrap places-wrap"><div class="section-heading"><p class="eyebrow">08 · OUR LITTLE ATLAS</p><h2>Places that feel <em>like us.</em></h2><p>A little map for the places in your story.</p></div><div class="map-card"><div class="map-art" aria-label="An illustrated winding path with memory markers"><svg viewBox="0 0 700 250" role="img" aria-label="A winding dotted path between four heart markers"><path class="map-path" d="M34 178 C110 178 96 69 190 84 S269 191 351 143 S438 45 518 91 S610 200 670 118"/><path class="map-path-soft" d="M34 178 C110 178 96 69 190 84 S269 191 351 143 S438 45 518 91 S610 200 670 118"/></svg><div class="map-marker marker-1"><span>♡</span><small></small></div><div class="map-marker marker-2"><span>♡</span><small></small></div><div class="map-marker marker-3"><span>♡</span><small></small></div><div class="map-marker marker-4"><span>♡</span><small></small></div><span class="map-doodle md-one">✿</span><span class="map-doodle md-two">✦</span><span class="map-doodle md-three">✿</span></div><div class="place-list" id="placeList"></div></div></div></section>
+
+      <section class="one-more section-wrap"><span class="one-more-flower">✿</span><p class="eyebrow">09 · BEFORE YOU GO</p><h2>One more <em>thing…</em></h2><p id="finalMessage" class="final-message" hidden></p><button class="final-reveal" id="finalReveal">One more thing <span>♡</span></button></section>
+
+      <footer class="ending" id="ending"><div class="ending-sparkles">✦　✧　✦</div><p>AND HERE'S THE WHOLE TRUTH</p><h2>I'm so lucky I got<br>to <em>love you.</em></h2><div class="ending-line"></div><p class="occasion">You were the best, Xaby. Thank you for the love we shared. 💖</p><div class="ending-signature">with love,<br><span id="endingYourName">Erlex</span></div><button class="replay-button" id="replay">↺ &nbsp; Replay the surprise</button><div class="ending-flower">✿</div></footer>
+    </main>
+    <div class="cutout-layer" id="cutoutLayer" aria-hidden="true"></div>
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=photo-carousel-1"></script>
+</body>
+</html>

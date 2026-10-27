@@ -1,0 +1,5 @@
+.env
+node_modules/
+couple-data.json
+opens.json
+public/
