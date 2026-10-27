@@ -13,7 +13,8 @@ exports.handler = async event => {
   if (!codeMatches(body.code)) return json(401, { error: 'That code did not work. Try again.' });
 
   try {
-    const { getStore } = await import('@netlify/blobs');
+    const { getStore, connectLambda } = await import('@netlify/blobs');
+    connectLambda(event);
     const opens = getStore('site-state');
     const previous = await opens.get('opens', { type: 'json' }) || { count: 0 };
     const openCount = Number(previous.count || 0) + 1;
